@@ -1,0 +1,11 @@
+# Objects marked on our earlier map (maps/apartment_map.yaml), from the team's semantic_map.yaml.
+objects:
+  - {class: refrigerator, x: 4.194, y: 2.285, name: fridge}
+  - {class: dining table, x: 6.551, y: -0.594, name: dining_table}
+  - {class: tv, x: -0.619, y: 2.940, name: television}
+  - {class: shelf, x: 1.970, y: 3.090, name: shelf}
+  - {class: couch, x: 1.448, y: 0.695, name: sofa}
+  - {class: bed, x: -0.039, y: -5.781, name: Bed}
+  - {class: desk, x: 9.254, y: -4.365, name: study_table}
+  - {class: wardrobe, x: 4.340, y: -6.390, name: almirah}
+  - {class: cabinet, x: -2.170, y: -6.760, name: drawer}

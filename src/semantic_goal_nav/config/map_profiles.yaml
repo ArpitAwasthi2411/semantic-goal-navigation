@@ -1,0 +1,17 @@
+# Which map the robot navigates on (launch argument  world_map:=old | house).
+# world_to_map: pose of the map frame in the Gazebo world (yaw in degrees). The launch uses it to
+# turn the spawn position (world) into the initial pose for AMCL (map frame).
+old:        # our earlier map of the house, with the team's rooms and objects.
+            # Tested: the map is drifted (phantom walls, missing west half), so the planner finds no
+            # path to most goals and AMCL loses the robot. Kept for comparison; use "house".
+  map: apartment_map.yaml
+  rooms: rooms_old.yaml
+  known_objects: known_objects_old.yaml
+  world_to_map: {x: 5.847, y: 3.653, yaw_deg: -97.431}
+  spawn: {x: 0.6, y: 0.6, yaw: 0.0}
+house:      # the clean map shipped with the AWS small house (map frame = world frame)
+  map: small_house.yaml
+  rooms: rooms.yaml
+  known_objects: known_objects.yaml
+  world_to_map: {x: 0.0, y: 0.0, yaw_deg: 0.0}
+  spawn: {x: 0.0, y: 0.0, yaw: 0.0}

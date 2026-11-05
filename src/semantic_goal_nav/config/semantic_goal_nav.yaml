@@ -1,0 +1,41 @@
+# Parameters of the semantic navigation nodes (the launch file adds use_sim_time and file paths).
+yolo_detector:
+  ros__parameters:
+    image_topic: /camera/image_raw
+    confidence: 0.4          # boxes below this are dropped
+    iou: 0.45
+    imgsz: 640
+    max_rate_hz: 2.0         # inference rate on the newest frame (raise on a fast PC)
+    device: ""               # "" = auto (cuda if available), "cpu", "cuda:0"
+    half: false              # FP16 (CUDA only)
+    publish_annotated: true
+
+semantic_map_manager:
+  ros__parameters:
+    map_frame: map
+    base_frame: base_footprint
+    scan_topic: /scan
+    camera_info_topic: /camera/camera_info
+    depth_topic: ""          # set to a depth image topic to use per-pixel depth instead of LiDAR
+    min_confidence: 0.45
+    min_observations: 3      # sightings before an object counts as real
+    merge_radius: 0.6        # same class closer than this = same object
+    max_object_range: 5.0
+    check_line_of_sight: true
+
+llm_command:
+  ros__parameters:
+    standoff: 0.6            # stop this far from the object (m)
+    goal_timeout: 180.0
+    max_candidates: 3        # try the next-nearest object if one is unreachable
+    llm_timeout: 60.0
+    map_frame: map
+    base_frame: base_footprint
+
+nav2_goal_sender:
+  ros__parameters:
+    goal_topic: /semantic_goal
+    robot_radius: 0.22
+    goal_clearance_margin: 0.08
+    max_retries: 1
+    backup_distance: 0.15

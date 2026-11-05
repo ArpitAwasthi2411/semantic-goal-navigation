@@ -1,0 +1,14 @@
+# Rooms on our earlier map (maps/apartment_map.yaml), from the team's semantic_map.yaml.
+# Corners re-ordered so each polygon is a proper outline; waypoints = open floor inside.
+rooms:
+  kitchen:
+    polygon: [[4.14, -0.88], [9.33, -1.09], [8.73, 3.68], [3.62, 2.33]]
+    waypoint: [7.80, 0.90]
+  dining room:
+    polygon: [[-2.08, -2.22], [2.63, -1.24], [2.01, 2.69], [-2.21, 3.41]]
+    waypoint: [0.00, 2.40]
+    aliases: [dining area, living room, lounge, hall, drawing room, sitting room]
+  bedroom:
+    polygon: [[-2.01, -7.39], [10.30, -6.18], [9.74, -2.49], [-0.54, -3.62]]
+    waypoint: [4.40, -5.00]
+    aliases: [bed room, master bedroom]
